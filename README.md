@@ -18,7 +18,7 @@
 
 ```
 
-## simple_form_addon.rb:
+## [simple_form_addon.rb](https://github.com/lambda2/simple-form-addon/blob/master/config/initializers/simple_form_addon.rb):
 
 ```ruby
 module SimpleForm
@@ -55,7 +55,8 @@ SimpleForm::Inputs::Base.send(:include, SimpleForm::Components::Addon)
 
 ```
 
-## simple_form_bootstrap.rb:
+## [simple_form_bootstrap.rb](https://github.com/lambda2/simple-form-addon/blob/master/config/initializers/simple_form_bootstrap.rb):
+
 
 ```ruby
 
