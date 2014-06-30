@@ -8,10 +8,10 @@ SimpleForm.setup do |config|
     b.use :placeholder
     b.use :label, class: 'control-label'
 
-    b.wrapper tag: 'div', class: 'input-group' do |ba|
-      ba.use :prepend # Pour le prepend (a gauche)
+    b.wrapper :input_wrapper, tag: 'div' do |ba|
+      ba.use :prepend, wrapper: b # Pour le prepend (a gauche)
       ba.use :input, class: 'form-control'
-      ba.use :append # Pour le append (a droite)
+      ba.use :append, wrapper: b # Pour le append (a droite)
       ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
       ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
     end

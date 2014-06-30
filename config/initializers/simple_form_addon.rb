@@ -2,28 +2,34 @@ module SimpleForm
   module Components
     module Addon
 
-      def append
-        addon(options[:append])
+      def append(wrapper_options)
+        addon(options[:append], wrapper_options[:wrapper])
       end
 
-      def prepend
-        addon(options[:prepend])
+      def prepend(wrapper_options)
+        addon(options[:prepend], wrapper_options[:wrapper])
       end
 
       def has_append?
-        append.present?
+        options[:append].present?
       end
 
       def has_prepend?
-        prepend.present?
+        options[:prepend].present?
       end
 
-      def addon(content)
+      def addon(content, wrapper)
+        if options.include? :append or options.include? :prepend
+          wrapper.find(:input_wrapper).setInputGroup() if wrapper.find(:input_wrapper)
+        else
+          wrapper.find(:input_wrapper).unsetInputGroup() if wrapper.find(:input_wrapper)
+          nil
+        end
+
         if content
           "<span class=\"input-group-addon\">#{content.to_s.html_safe}</span>"
         end
       end
-
     end
   end
 end

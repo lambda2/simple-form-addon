@@ -9,3 +9,12 @@
         = f.input :percentage, as: :integer, :class => "form-control", :prepend => "#"
         = f.input :name, :class => "form-control", :prepend => "un", :append => "et deux"
         = f.input :description, as: :text, :class => "form-control"
+        = f.input :name, :class => "form-control"
+
+      .panel-heading.clearfix
+        %h3.panel-title.pull-left
+          Comments
+        .controls.pull-right
+          .btn-group
+            %a.btn.btn-default{href: "/posts/10/comments/new"} Create
+            %a.btn.btn-default{href: "/posts/10/comments"} Index
