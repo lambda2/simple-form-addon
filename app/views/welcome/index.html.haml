@@ -5,11 +5,15 @@
       %h3 Test formulaire
 
       = simple_form_for @beer do |f|
-        = f.input :name, :class => "form-control", :append => "$"
+        = f.input :name, :class => "form-control", :append => "$", :required => ""
         = f.input :percentage, as: :integer, :class => "form-control", :prepend => "#"
         = f.input :name, :class => "form-control", :prepend => "un", :append => "et deux"
         = f.input :description, as: :text, :class => "form-control"
         = f.input :name, :class => "form-control"
+        = f.input :name, :class => "form-control", :wrap_with => {:class => "YAYA"}
+
+        %input{type: "text", required: ""}
+        %label{placeholder: "World", alt: "Hello"}
 
       .panel-heading.clearfix
         %h3.panel-title.pull-left
